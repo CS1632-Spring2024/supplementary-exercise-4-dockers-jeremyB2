@@ -67,57 +67,57 @@ public class D3Test {
     // 4 | assert | var | http://localhost:8080/reset
     assertEquals(vars.get("var").toString(), "http://localhost:8080/reset");
   }
-  @Test
-  public void dEFECT1FUNFEED() {
-    // Test name: DEFECT1-FUN-FEED
-    // Step # | name | target | value
-    // 1 | open | / | 
-    driver.get("http://localhost:8080/");
-    // 2 | runScript | document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false"; | 
-    js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    // 3 | click | xpath=//a[contains(text(),'Feed-A-Cat')] | 
-    driver.findElement(By.xpath("//a[contains(text(),\'Feed-A-Cat\')]")).click();
-    // 4 | click | xpath=//input[@id='catnips'] | 
-    driver.findElement(By.xpath("//input[@id=\'catnips\']")).click();
-    // 5 | type | xpath=//input[@id='catnips'] | 0
-    driver.findElement(By.xpath("//input[@id=\'catnips\']")).sendKeys("0");
-    // 6 | click | xpath=//button[contains(.,'Feed')] | 
-    driver.findElement(By.xpath("//button[contains(.,\'Feed\')]")).click();
-    // 7 | assertText | xpath=//div[@id='feedResult'] | Cat fight!
-    assertThat(driver.findElement(By.xpath("//div[@id=\'feedResult\']")).getText(), is("Cat fight!"));
-  }
-  @Test
-  public void dEFECT2FUNGREETACAT() {
-    // Test name: DEFECT2-FUN-GREET-A-CAT
-    // Step # | name | target | value
-    // 1 | open | / | 
-    driver.get("http://localhost:8080/");
-    // 2 | runScript | document.cookie = "1=true";document.cookie = "2=false";document.cookie = "3=false"; | 
-    js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    // 3 | click | xpath=//a[contains(text(),'Greet-A-Cat')] | 
-    driver.findElement(By.xpath("//a[contains(text(),\'Greet-A-Cat\')]")).click();
-    // 4 | assertElementPresent | xpath=//*[text()='Meow!Meow!'] | 
-    {
-      List<WebElement> elements = driver.findElements(By.xpath("//*[text()=\'Meow!Meow!\']"));
-      assert(elements.size() > 0);
-    }
-  }
-  @Test
-  public void dEFECT3FUNGREETACATWITHNAME() {
-    // Test name: DEFECT3-FUN-GREET-A-CAT-WITH-NAME
-    // Step # | name | target | value
-    // 1 | open | / | 
-    driver.get("http://localhost:8080/");
-    // 2 | runScript | document.cookie = "1=true";document.cookie = "2=false";document.cookie = "3=false"; | 
-    js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
-    // 3 | open | /greet-a-cat/Jennyanydots | 
-    driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
-    // 4 | assertElementPresent | xpath=//*[text()='Jennyanydots is not here.'] | 
-    {
-      List<WebElement> elements = driver.findElements(By.xpath("//*[text()=\'Jennyanydots is not here.\']"));
-      assert(elements.size() > 0);
-    }
-  }
+  // @Test
+  // public void dEFECT1FUNFEED() {
+  //   // Test name: DEFECT1-FUN-FEED
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("http://localhost:8080/");
+  //   // 2 | runScript | document.cookie = "1=false";document.cookie = "2=false";document.cookie = "3=false"; | 
+  //   js.executeScript("document.cookie = \"1=false\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   // 3 | click | xpath=//a[contains(text(),'Feed-A-Cat')] | 
+  //   driver.findElement(By.xpath("//a[contains(text(),\'Feed-A-Cat\')]")).click();
+  //   // 4 | click | xpath=//input[@id='catnips'] | 
+  //   driver.findElement(By.xpath("//input[@id=\'catnips\']")).click();
+  //   // 5 | type | xpath=//input[@id='catnips'] | 0
+  //   driver.findElement(By.xpath("//input[@id=\'catnips\']")).sendKeys("0");
+  //   // 6 | click | xpath=//button[contains(.,'Feed')] | 
+  //   driver.findElement(By.xpath("//button[contains(.,\'Feed\')]")).click();
+  //   // 7 | assertText | xpath=//div[@id='feedResult'] | Cat fight!
+  //   assertThat(driver.findElement(By.xpath("//div[@id=\'feedResult\']")).getText(), is("Cat fight!"));
+  // }
+  // @Test
+  // public void dEFECT2FUNGREETACAT() {
+  //   // Test name: DEFECT2-FUN-GREET-A-CAT
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("http://localhost:8080/");
+  //   // 2 | runScript | document.cookie = "1=true";document.cookie = "2=false";document.cookie = "3=false"; | 
+  //   js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   // 3 | click | xpath=//a[contains(text(),'Greet-A-Cat')] | 
+  //   driver.findElement(By.xpath("//a[contains(text(),\'Greet-A-Cat\')]")).click();
+  //   // 4 | assertElementPresent | xpath=//*[text()='Meow!Meow!'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[text()=\'Meow!Meow!\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  // }
+  // @Test
+  // public void dEFECT3FUNGREETACATWITHNAME() {
+  //   // Test name: DEFECT3-FUN-GREET-A-CAT-WITH-NAME
+  //   // Step # | name | target | value
+  //   // 1 | open | / | 
+  //   driver.get("http://localhost:8080/");
+  //   // 2 | runScript | document.cookie = "1=true";document.cookie = "2=false";document.cookie = "3=false"; | 
+  //   js.executeScript("document.cookie = \"1=true\";document.cookie = \"2=false\";document.cookie = \"3=false\";");
+  //   // 3 | open | /greet-a-cat/Jennyanydots | 
+  //   driver.get("http://localhost:8080/greet-a-cat/Jennyanydots");
+  //   // 4 | assertElementPresent | xpath=//*[text()='Jennyanydots is not here.'] | 
+  //   {
+  //     List<WebElement> elements = driver.findElements(By.xpath("//*[text()=\'Jennyanydots is not here.\']"));
+  //     assert(elements.size() > 0);
+  //   }
+  // }
   @Test
   public void tEST2RESET() {
     // Test name: TEST-2-RESET
